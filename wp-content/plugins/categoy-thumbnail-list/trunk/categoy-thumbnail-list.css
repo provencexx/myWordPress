@@ -1,0 +1,30 @@
+/*
+Category Thumbnail List
+WordPress Plugin by Jonk, http://jonk.pirateboy.net
+Download from http://wordpress.org/extend/plugins/categoy-thumbnail-list
+*/
+.categoryThumbnailList {
+	display:block;
+	clear:both;
+}
+.categoryThumbnailList * {
+	border:0px;
+	padding:0px;
+	margin:0px;
+}
+.categoryThumbnailList .categoryThumbnailList_item {
+	width:150px;
+	height:167px;
+	display:inline;
+	float:left;
+	margin:0px 10px 10px 0px;
+	text-align:left;
+	overflow:hidden;
+}
+.categoryThumbnailList_clearer {
+	display:block;
+	clear:both;
+	height:0px;
+	visibility:hidden;
+	overflow:hidden;
+}
