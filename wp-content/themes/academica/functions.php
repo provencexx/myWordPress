@@ -61,6 +61,18 @@ function academica_setup() {
 add_action( 'after_setup_theme', 'academica_setup' );
 
 /**
+ * WordPress 后台禁用Google Open Sans字体，加速网站
+ * https://www.wpdaxue.com/disable-google-fonts.html
+ */
+add_filter( 'gettext_with_context', 'wpdx_disable_open_sans', 888, 4 );
+function wpdx_disable_open_sans( $translations, $text, $context, $domain ) {
+  if ( 'Open Sans font: on or off' == $context && 'on' == $text ) {
+    $translations = 'off';
+  }
+  return $translations;
+}
+
+/**
  * Enqueues scripts and styles
  */
 function academica_enqueue_scripts() {
@@ -119,8 +131,17 @@ function academica_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar: category', 'academica' ),
+		'name'          => __( 'Sidebar: Content-bottom', 'academica' ),
 		'id'            => 'sidebar-4',
+		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="heading">',
+		'after_title'   => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Sidebar: Category-left', 'academica' ),
+		'id'            => 'sidebar-5',
 		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="heading">',

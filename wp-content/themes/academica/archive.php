@@ -6,11 +6,11 @@
 get_header(); ?>
 
 <div id="content" class="clearfix">
-hahh
+
 	<div class="column column-title">
 
 		<?php get_template_part( 'breadcrumb' ); ?>
-	你妹
+	
 		<h1 class="title-header"><?php
 			if ( is_category() ) {
 				printf( __( 'Category Archives: %s', 'academica' ), '<span>' . single_cat_title( '', false ) . '</span>' );

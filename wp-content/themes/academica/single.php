@@ -15,12 +15,13 @@ get_header(); ?>
 		<php get_template_part( 'breadcrumb' ); ?>
 	</div>-->
 	<!-- end .column-title -->
-
+	<!-- 隐藏左侧边栏 -->
+	<!--
 	<?php if ( 'column-full' != $post_layout ) : ?>
 	<div class="column column-narrow">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div><!-- end .column-narrow -->
-	<?php endif; ?>
+	<?php endif; ?> 
 
 	<div class="column column-content single">
 
@@ -36,12 +37,14 @@ get_header(); ?>
 		<?php comments_template(); ?>
 
 	</div><!-- end .column-content -->
-
+	
+	<!-- 隐藏右侧边栏 -->
+	<!--
 	<?php if ( 'column-full' != $post_layout && 'column-right' != $post_layout ) : ?>
 	<div class="column column-narrow column-last">
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>
 	</div><!-- end .column-narrow -->
-	<?php endif; ?>
+	<?php endif; ?> 
 
 	<?php endwhile; ?>
 

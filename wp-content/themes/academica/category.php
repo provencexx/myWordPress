@@ -8,7 +8,7 @@ get_header(); ?>
 <div id="content" class="clearfix">
 
 	<div class="column column-narrow category-column-narrow">
-		<?php dynamic_sidebar( 'sidebar-4' ); ?>
+		<?php dynamic_sidebar( 'sidebar-5' ); ?>
 	</div><!-- end .column-narrow -->
 
 	<div id="column-content" class="column column-content column-double posts">

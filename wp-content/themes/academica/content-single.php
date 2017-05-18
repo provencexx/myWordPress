@@ -7,7 +7,7 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php the_title( '<h1 class="title-header">', '</h1>' ); ?>
-
+	<!-- 隐藏作者时间等信息
 	<div class="entry-meta">
 		<?php
 		academica_entry_meta();

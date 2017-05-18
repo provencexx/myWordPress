@@ -15,13 +15,19 @@ get_header(); ?>
 
 	<div id="column-content" class="column column-content posts">
 		<?php
-		if ( have_posts() ) :
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'content', get_post_format() );
+			query_posts( 'p=52' );
+			// 循环
+			while (have_posts()) : the_post();
+				the_title('<h1 class="title-header" style="margin-bottom:20px;">','</h1>');
+				the_content();	
 			endwhile;
-			academica_content_nav();
-		 endif; ?>
+		?>	
+	
+	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
+    		<div class="column column-narrow" style="margin-top:58px;">
+    			<?php dynamic_sidebar( 'sidebar-4' ); ?>
+    		</div><!-- end .column-narrow -->
+    	<?php endif; ?>
 
 	</div><!-- end .column-content -->
 

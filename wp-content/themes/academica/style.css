@@ -821,6 +821,11 @@ img.aligncenter,
 	margin: 0;
 }
 
+.post-template-default .column-content{
+	width: 960px;
+	margin: 0;
+}
+
 .single .title-header {
 	font-size:40px;
 	color: #333;

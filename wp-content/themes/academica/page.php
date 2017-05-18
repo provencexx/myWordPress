@@ -7,7 +7,7 @@
 get_header(); ?>
 
 <div id="content" class="clearfix">
-
+	
 	<?php while ( have_posts() ) : the_post(); ?>
 
 	<!--<div class="column column-title">
