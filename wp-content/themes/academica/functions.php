@@ -147,6 +147,24 @@ function academica_widgets_init() {
 		'before_title'  => '<h3 class="heading">',
 		'after_title'   => '</h3>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Sidebar: After-head', 'academica' ),
+		'id'            => 'sidebar-6',
+		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="heading">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Sidebar: Footer', 'academica' ),
+		'id'            => 'sidebar-7',
+		'before_widget' => '<div id="%1$s" class="wrap widget clearfix %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="heading">',
+		'after_title'   => '</h3>',
+	) );
 
 	// Custom Theme Widget
 	require_once get_template_directory() . '/inc/widgets.php';
@@ -155,6 +173,17 @@ function academica_widgets_init() {
 }
 add_action( 'widgets_init', 'academica_widgets_init' );
 
+remove_action('wp_head', 'index_rel_link');//当前文章的索引
+remove_action('wp_head', 'feed_links_extra', 3);// 额外的feed,例如category, tag页
+remove_action('wp_head', 'start_post_rel_link', 10, 0);// 开始篇
+remove_action('wp_head', 'parent_post_rel_link', 10, 0);// 父篇
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // 上、下篇.
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );//rel=pre
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );//rel=shortlink
+remove_action('wp_head', 'rel_canonical' );
+remove_action('wp_head','rsd_link');//移除head中的rel="EditURI"
+remove_action('wp_head','wlwmanifest_link');//移除head中的rel="wlwmanifest"
+remove_action('wp_head','rsd_link');//rsd_link移除XML-RPC
 
 /**
  * Add some useful default widgets to the Academica sidebar

@@ -6,6 +6,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+        <meta name="baidu-site-verification" content="uOhvGFQtdH" />
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,6 +14,24 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<?php wp_head(); ?>
+	
+	<meta name="keywords" content="杜成斌 杜成斌课教授 杜成斌课题组" />
+	<meta name="description" content="杜成斌 杜成斌课教授 杜成斌课题组" />
+	
+	<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 </head>
 
@@ -100,3 +119,9 @@
 	</div><!-- end #header -->
 
 	<div id="wrap">
+	  <?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
+		<div class="inner-wrap">
+			<?php dynamic_sidebar( 'sidebar-6' ); ?>
+		</div>
+	  <?php endif; ?>
+	
